@@ -1,0 +1,1166 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--Copyright Nucletron © 2010
+-->
+<configuration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" partset="110270-25" label="Utrecht University of Valencia Ovoid 25 mm" shortlabel="Utrech25" revision="2" released="true">
+  <choice name="IntrauterinePart">
+    <assembly part="189739-06" label="IU" />
+    <assembly part="189745-06" label="IU" />
+    <assembly part="189769-06" label="IU" />
+    <assembly part="110296-06" label="IU" />
+    <assembly part="110298-06" label="IU" />
+    <assembly part="110300-06" label="IU" />
+  </choice>
+  <choice name="InterstitialPart4">
+    <assembly part="110231-50" />
+    <assembly part="110231-45" />
+    <assembly part="110231-40" />
+    <assembly part="110231-35" />
+    <assembly part="110231-30" />
+    <assembly part="110231-20" />
+  </choice>
+  <choice name="InterstitialPart5">
+    <assembly part="110231-50" />
+    <assembly part="110231-45" />
+    <assembly part="110231-40" />
+    <assembly part="110231-35" />
+    <assembly part="110231-30" />
+    <assembly part="110231-20" />
+  </choice>
+  <choice name="InterstitialPart6">
+    <assembly part="110231-50" />
+    <assembly part="110231-45" />
+    <assembly part="110231-40" />
+    <assembly part="110231-35" />
+    <assembly part="110231-30" />
+    <assembly part="110231-20" />
+  </choice>
+  <choice name="InterstitialPart7">
+    <assembly part="110231-50" />
+    <assembly part="110231-45" />
+    <assembly part="110231-40" />
+    <assembly part="110231-35" />
+    <assembly part="110231-30" />
+    <assembly part="110231-20" />
+  </choice>
+  <choice name="InterstitialPart8">
+    <assembly part="110231-50" />
+    <assembly part="110231-45" />
+    <assembly part="110231-40" />
+    <assembly part="110231-35" />
+    <assembly part="110231-30" />
+    <assembly part="110231-20" />
+  </choice>
+  <choice name="InterstitialPart9">
+    <assembly part="110231-50" />
+    <assembly part="110231-45" />
+    <assembly part="110231-40" />
+    <assembly part="110231-35" />
+    <assembly part="110231-30" />
+    <assembly part="110231-20" />
+  </choice>
+    <assemblyRoot>     
+            
+    <assembly part="189722-04A">
+      <connection name="O1" parentConnector="OVOID1FIX" childConnector="OVOID1FIX">
+        <assembly part="189735-06" label="O1">
+          <connection name="OvoidRi" parentConnector="OVOIDRI" childConnector="OVOIDRI">
+            <assembly part="110242-03R" label="Ovoid right">
+            </assembly>
+          </connection>
+          <connection name="N1R" parentConnector="NEEDLE1" childConnector="NEEDLE1">
+            <choice ref="InterstitialPart4" label="Interstitial4" />
+          </connection>
+          <connection name="N2R" parentConnector="NEEDLE2" childConnector="NEEDLE2">
+            <choice ref="InterstitialPart5" label="Interstitial5" />
+          </connection>
+          <connection name="N3R" parentConnector="NEEDLE3" childConnector="NEEDLE3">
+            <choice ref="InterstitialPart6" label="Interstitial6" />
+          </connection>
+        </assembly>
+      </connection>
+      
+      <connection name="O2" parentConnector="OVOID2FIX" childConnector="OVOID2FIX">
+        <assembly part="189740-06" label="O2">
+          <connection name="OvoidLe" parentConnector="OVOIDLE" childConnector="OVOIDLE">
+            <assembly part="110242-03L" label="Ovoid left">
+            </assembly>
+          </connection>
+          <connection name="N1L" parentConnector="NEEDLE4" childConnector="NEEDLE4">
+            <choice ref="InterstitialPart7" label="Interstitial7" />
+          </connection>
+          <connection name="N2L" parentConnector="NEEDLE5" childConnector="NEEDLE5">
+            <choice ref="InterstitialPart8" label="Interstitial8" />
+          </connection>
+          <connection name="N3L" parentConnector="NEEDLE6" childConnector="NEEDLE6">
+            <choice ref="InterstitialPart9" label="Interstitial9" />
+          </connection>
+        </assembly>
+      </connection>
+      <connection name="IUSuspension" parentConnector="IUBRAKES" childConnector="IUBRAKES">
+        <assembly part="189722-04B" label="IUSuspension">
+          <connection name="IU" parentConnector="IUFIX" childConnector="IUFIX">
+            <choice ref="IntrauterinePart" label="Intrauterine" />
+          </connection>
+        </assembly>
+      </connection>
+    </assembly>
+  </assemblyRoot>
+  <assemblyPose>
+    <if connection="O1.OvoidRi" part="110242-03R">
+      <pose connection="O1" rotation="1.122" translation="0" />
+    </if>
+    <if connection="O2.OvoidLe" part="110242-03L">
+      <pose connection="O2" rotation="-1.122" translation="0" />
+    </if>
+    <if connection="IUSuspension.IU" part="189769-06">
+      <pose connection="IUSuspension" rotation="-4.09" translation="0" />
+      <poseDictionary independent="IUProtrusion">
+        <pose connection="IUSuspension" rotation="-4.09" translation="0" value="15" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="15" value="15" />
+        <pose connection="IUSuspension" rotation="-4.09" translation="0" value="10" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="10" value="10" />
+        <pose connection="IUSuspension" rotation="-4.19" translation="0" value="5" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="5" value="5" />
+        <pose connection="IUSuspension" rotation="-4.09" translation="0" value="0" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="0" value="0" />
+        <pose connection="IUSuspension" rotation="-3.99" translation="0" value="-5" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="-5" value="-5" />
+        <pose connection="IUSuspension" rotation="-3.69" translation="0" value="-10" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="-10" value="-10" />
+        <pose connection="IUSuspension" rotation="-3.09" translation="0" value="-15" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="-15" value="-15" />
+        <pose connection="IUSuspension" rotation="-2.29" translation="0" value="-20" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="-20" value="-20" />
+        <pose connection="IUSuspension" rotation="-1.39" translation="0" value="-25" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="-25" value="-25" />
+        <pose connection="IUSuspension" rotation="-0.39" translation="0" value="-30" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="-30" value="-30" />
+        <pose connection="IUSuspension" rotation="0.810000000000001" translation="0" value="-35" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="-35" value="-35" />
+        <pose connection="IUSuspension" rotation="2.01" translation="0" value="-40" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="-40" value="-40" />
+        <pose connection="IUSuspension" rotation="3.41" translation="0" value="-45" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="-45" value="-45" />
+        <pose connection="IUSuspension" rotation="5.11" translation="0" value="-50" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="-50" value="-50" />
+        <pose connection="IUSuspension" rotation="6.71" translation="0" value="-55" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="-55" value="-55" />
+        <pose connection="IUSuspension" rotation="8.21" translation="0" value="-60" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="-60" value="-60" />
+      </poseDictionary>
+      <poseDictionary independent="IUProtrusion_Tip_Tip">
+        <pose connection="IUSuspension" rotation="-4.09" translation="0" value="86.8174" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="15" value="86.8174" />
+        <pose connection="IUSuspension" rotation="-4.09" translation="0" value="82.9331" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="10" value="82.9331" />
+        <pose connection="IUSuspension" rotation="-4.19" translation="0" value="79.3881" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="5" value="79.3881" />
+        <pose connection="IUSuspension" rotation="-4.09" translation="0" value="75.5593" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="0" value="75.5593" />
+        <pose connection="IUSuspension" rotation="-3.99" translation="0" value="71.8796" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="-5" value="71.8796" />
+        <pose connection="IUSuspension" rotation="-3.69" translation="0" value="67.8974" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="-10" value="67.8974" />
+        <pose connection="IUSuspension" rotation="-3.09" translation="0" value="63.3528" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="-15" value="63.3528" />
+        <pose connection="IUSuspension" rotation="-2.29" translation="0" value="58.4684" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="-20" value="58.4684" />
+        <pose connection="IUSuspension" rotation="-1.39" translation="0" value="53.4954" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="-25" value="53.4954" />
+        <pose connection="IUSuspension" rotation="-0.39" translation="0" value="48.4532" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="-30" value="48.4532" />
+        <pose connection="IUSuspension" rotation="0.810000000000001" translation="0" value="43.1065" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="-35" value="43.1065" />
+        <pose connection="IUSuspension" rotation="2.01" translation="0" value="38.0208" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="-40" value="38.0208" />
+        <pose connection="IUSuspension" rotation="3.41" translation="0" value="32.7292" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="-45" value="32.7292" />
+        <pose connection="IUSuspension" rotation="5.11" translation="0" value="27.0417" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="-50" value="27.0417" />
+        <pose connection="IUSuspension" rotation="6.71" translation="0" value="22.2928" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="-55" value="22.2928" />
+        <pose connection="IUSuspension" rotation="8.21" translation="0" value="18.9006" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="-60" value="18.9006" />
+      </poseDictionary>
+      <poseDictionary independent="IUProtrusion_Tip_1st marker">
+        <pose connection="IUSuspension.IU" rotation="0" translation="15" value="85.7625" />
+        <pose connection="IUSuspension" rotation="-4.09" translation="0" value="85.7625" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="10" value="81.668" />
+        <pose connection="IUSuspension" rotation="-4.19" translation="0" value="81.668" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="5" value="77.8683" />
+        <pose connection="IUSuspension" rotation="-4.09" translation="0" value="77.8683" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="0" value="73.8144" />
+        <pose connection="IUSuspension" rotation="-3.99" translation="0" value="73.8144" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="-5" value="69.8871" />
+        <pose connection="IUSuspension" rotation="-3.69" translation="0" value="69.8871" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="-10" value="65.6819" />
+        <pose connection="IUSuspension" rotation="-3.09" translation="0" value="65.6819" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="-15" value="60.9596" />
+        <pose connection="IUSuspension" rotation="-2.29" translation="0" value="60.9596" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="-20" value="55.9143" />
+        <pose connection="IUSuspension" rotation="-1.39" translation="0" value="55.9143" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="-25" value="50.767" />
+        <pose connection="IUSuspension" rotation="-0.39" translation="0" value="50.767" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="-30" value="45.5294" />
+        <pose connection="IUSuspension" rotation="0.810000000000001" translation="0" value="45.5294" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="-35" value="39.9807" />
+        <pose connection="IUSuspension" rotation="2.01" translation="0" value="39.9807" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="-40" value="34.6189" />
+        <pose connection="IUSuspension" rotation="3.41" translation="0" value="34.6189" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="-45" value="29.003" />
+        <pose connection="IUSuspension" rotation="5.11" translation="0" value="29.003" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="-50" value="22.9232" />
+        <pose connection="IUSuspension" rotation="6.71" translation="0" value="22.9232" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="-55" value="17.5673" />
+        <pose connection="IUSuspension" rotation="8.21" translation="0" value="17.5673" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="-60" value="13.4119" />
+        <pose connection="IUSuspension" rotation="17.39" translation="0" value="13.4119" />
+      </poseDictionary>
+      <poseDictionary independent="IUProtrusion_1st marker_Tip">
+        <pose connection="IUSuspension" rotation="-4.09" translation="0" value="79.8745" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="15" value="79.8745" />
+        <pose connection="IUSuspension" rotation="-4.09" translation="0" value="75.961" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="10" value="75.961" />
+        <pose connection="IUSuspension" rotation="-4.19" translation="0" value="72.395" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="5" value="72.395" />
+        <pose connection="IUSuspension" rotation="-4.09" translation="0" value="68.5593" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="0" value="68.5593" />
+        <pose connection="IUSuspension" rotation="-3.99" translation="0" value="64.888" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="-5" value="64.888" />
+        <pose connection="IUSuspension" rotation="-3.69" translation="0" value="60.9313" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="-10" value="60.9313" />
+        <pose connection="IUSuspension" rotation="-3.09" translation="0" value="56.4277" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="-15" value="56.4277" />
+        <pose connection="IUSuspension" rotation="-2.29" translation="0" value="51.6035" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="-20" value="51.6035" />
+        <pose connection="IUSuspension" rotation="-1.39" translation="0" value="46.7189" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="-25" value="46.7189" />
+        <pose connection="IUSuspension" rotation="-0.39" translation="0" value="41.8054" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="-30" value="41.8054" />
+        <pose connection="IUSuspension" rotation="0.810000000000001" translation="0" value="36.6403" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="-35" value="36.6403" />
+        <pose connection="IUSuspension" rotation="2.01" translation="0" value="31.8366" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="-40" value="31.8366" />
+        <pose connection="IUSuspension" rotation="3.41" translation="0" value="26.9739" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="-45" value="26.9739" />
+        <pose connection="IUSuspension" rotation="5.11" translation="0" value="21.9776" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="-50" value="21.9776" />
+        <pose connection="IUSuspension" rotation="6.71" translation="0" value="18.4392" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="-55" value="18.4392" />
+        <pose connection="IUSuspension" rotation="8.21" translation="0" value="16.9604" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="-60" value="16.9604" />
+      </poseDictionary>
+      <poseDictionary independent="IUProtrusion_1st marker_1st marker">
+        <pose connection="IUSuspension" rotation="-4.09" translation="0" value="78.901" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="15" value="78.901" />
+        <pose connection="IUSuspension" rotation="-4.09" translation="0" value="74.7618" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="10" value="74.7618" />
+        <pose connection="IUSuspension" rotation="-4.19" translation="0" value="70.9201" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="5" value="70.9201" />
+        <pose connection="IUSuspension" rotation="-4.09" translation="0" value="66.8373" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="0" value="66.8373" />
+        <pose connection="IUSuspension" rotation="-3.99" translation="0" value="62.8914" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="-5" value="62.8914" />
+        <pose connection="IUSuspension" rotation="-3.69" translation="0" value="58.6823" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="-10" value="58.6823" />
+        <pose connection="IUSuspension" rotation="-3.09" translation="0" value="53.9693" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="-15" value="53.9693" />
+        <pose connection="IUSuspension" rotation="-2.29" translation="0" value="48.9465" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="-20" value="48.9465" />
+        <pose connection="IUSuspension" rotation="-1.39" translation="0" value="43.8396" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="-25" value="43.8396" />
+        <pose connection="IUSuspension" rotation="-0.39" translation="0" value="38.6681" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="-30" value="38.6681" />
+        <pose connection="IUSuspension" rotation="0.810000000000001" translation="0" value="33.2176" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="-35" value="33.2176" />
+        <pose connection="IUSuspension" rotation="2.01" translation="0" value="28.0241" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="-40" value="28.0241" />
+        <pose connection="IUSuspension" rotation="3.41" translation="0" value="22.6817" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="-45" value="22.6817" />
+        <pose connection="IUSuspension" rotation="5.11" translation="0" value="17.0788" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="-50" value="17.0788" />
+        <pose connection="IUSuspension" rotation="6.71" translation="0" value="12.7975" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="-55" value="12.7975" />
+        <pose connection="IUSuspension" rotation="8.21" translation="0" value="10.9661" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="-60" value="10.9661" />
+      </poseDictionary>
+    </if>
+    <if connection="IUSuspension.IU" part="189739-06">
+      <pose connection="IUSuspension" rotation="-4.59" translation="0" />
+      <pose connection="IUSuspension.IU" rotation="0" translation="14.0248" />
+      <poseDictionary independent="IUProtrusion">
+        <pose connection="IUSuspension" rotation="-4.59" translation="0" value="15" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="29.0248" value="15" />
+        <pose connection="IUSuspension" rotation="-4.59" translation="0" value="10" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="24.0248" value="10" />
+        <pose connection="IUSuspension" rotation="-4.59" translation="0" value="5" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="19.0248" value="5" />
+        <pose connection="IUSuspension" rotation="-4.59" translation="0" value="0" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="14.0248" value="0" />
+        <pose connection="IUSuspension" rotation="-4.49" translation="0" value="-5" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="9.0248" value="-5" />
+        <pose connection="IUSuspension" rotation="-4.29" translation="0" value="-10" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="4.0248" value="-10" />
+        <pose connection="IUSuspension" rotation="-4.09" translation="0" value="-15" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="-0.975199999999999" value="-15" />
+        <pose connection="IUSuspension" rotation="-3.89" translation="0" value="-20" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="-5.9752" value="-20" />
+        <pose connection="IUSuspension" rotation="-3.59" translation="0" value="-25" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="-10.9752" value="-25" />
+        <pose connection="IUSuspension" rotation="-3.09" translation="0" value="-30" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="-15.9752" value="-30" />
+        <pose connection="IUSuspension" rotation="-2.59" translation="0" value="-35" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="-20.9752" value="-35" />
+        <pose connection="IUSuspension" rotation="-2.19" translation="0" value="-40" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="-25.9752" value="-40" />
+        <pose connection="IUSuspension" rotation="-1.69" translation="0" value="-45" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="-30.9752" value="-45" />
+        <pose connection="IUSuspension" rotation="-1.19" translation="0" value="-50" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="-35.9752" value="-50" />
+        <pose connection="IUSuspension" rotation="-0.69" translation="0" value="-55" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="-40.9752" value="-55" />
+        <pose connection="IUSuspension" rotation="-0.59" translation="0" value="-60" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="-45.9752" value="-60" />
+      </poseDictionary>
+      <poseDictionary independent="IUProtrusion_Tip_Tip">
+        <pose connection="IUSuspension" rotation="-4.59" translation="0" value="85.7368" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="29.0248" value="85.7368" />
+        <pose connection="IUSuspension" rotation="-4.59" translation="0" value="81.0756" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="24.0248" value="81.0756" />
+        <pose connection="IUSuspension" rotation="-4.59" translation="0" value="76.4571" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="19.0248" value="76.4571" />
+        <pose connection="IUSuspension" rotation="-4.59" translation="0" value="71.8897" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="14.0248" value="71.8897" />
+        <pose connection="IUSuspension" rotation="-4.49" translation="0" value="67.2301" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="9.0248" value="67.2301" />
+        <pose connection="IUSuspension" rotation="-4.29" translation="0" value="62.4697" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="4.0248" value="62.4697" />
+        <pose connection="IUSuspension" rotation="-4.09" translation="0" value="57.7668" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="-0.975199999999999" value="57.7668" />
+        <pose connection="IUSuspension" rotation="-3.89" translation="0" value="53.1362" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="-5.9752" value="53.1362" />
+        <pose connection="IUSuspension" rotation="-3.59" translation="0" value="48.4152" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="-10.9752" value="48.4152" />
+        <pose connection="IUSuspension" rotation="-3.09" translation="0" value="43.4134" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="-15.9752" value="43.4134" />
+        <pose connection="IUSuspension" rotation="-2.59" translation="0" value="38.5037" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="-20.9752" value="38.5037" />
+        <pose connection="IUSuspension" rotation="-2.19" translation="0" value="33.9297" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="-25.9752" value="33.9297" />
+        <pose connection="IUSuspension" rotation="-1.69" translation="0" value="29.3436" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="-30.9752" value="29.3436" />
+        <pose connection="IUSuspension" rotation="-1.19" translation="0" value="25.0383" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="-35.9752" value="25.0383" />
+        <pose connection="IUSuspension" rotation="-0.69" translation="0" value="21.1768" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="-40.9752" value="21.1768" />
+        <pose connection="IUSuspension" rotation="-0.59" translation="0" value="19.1648" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="-45.9752" value="19.1648" />
+      </poseDictionary>
+      <poseDictionary independent="IUProtrusion_Tip_1st marker">
+        <pose connection="IUSuspension" rotation="-4.59" translation="0" value="86.4453" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="29.0248" value="86.4453" />
+        <pose connection="IUSuspension" rotation="-4.59" translation="0" value="81.6671" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="24.0248" value="81.6671" />
+        <pose connection="IUSuspension" rotation="-4.59" translation="0" value="76.917" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="19.0248" value="76.917" />
+        <pose connection="IUSuspension" rotation="-4.59" translation="0" value="72.2007" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="14.0248" value="72.2007" />
+        <pose connection="IUSuspension" rotation="-4.49" translation="0" value="67.4044" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="9.0248" value="67.4044" />
+        <pose connection="IUSuspension" rotation="-4.29" translation="0" value="62.5194" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="4.0248" value="62.5194" />
+        <pose connection="IUSuspension" rotation="-4.09" translation="0" value="57.6678" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="-0.975199999999999" value="57.6678" />
+        <pose connection="IUSuspension" rotation="-3.89" translation="0" value="52.8581" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="-5.9752" value="52.8581" />
+        <pose connection="IUSuspension" rotation="-3.59" translation="0" value="47.9595" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="-10.9752" value="47.9595" />
+        <pose connection="IUSuspension" rotation="-3.09" translation="0" value="42.8195" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="-15.9752" value="42.8195" />
+        <pose connection="IUSuspension" rotation="-2.59" translation="0" value="37.7229" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="-20.9752" value="37.7229" />
+        <pose connection="IUSuspension" rotation="-2.19" translation="0" value="32.8443" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="-25.9752" value="32.8443" />
+        <pose connection="IUSuspension" rotation="-1.69" translation="0" value="27.8995" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="-30.9752" value="27.8995" />
+        <pose connection="IUSuspension" rotation="-1.19" translation="0" value="23.0884" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="-35.9752" value="23.0884" />
+        <pose connection="IUSuspension" rotation="-0.69" translation="0" value="18.5053" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="-40.9752" value="18.5053" />
+        <pose connection="IUSuspension" rotation="-0.59" translation="0" value="15.3353" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="-45.9752" value="15.3353" />
+      </poseDictionary>
+      <poseDictionary independent="IUProtrusion_1st marker_Tip">
+        <pose connection="IUSuspension" rotation="-4.59" translation="0" value="78.7732" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="29.0248" value="78.7732" />
+        <pose connection="IUSuspension" rotation="-4.59" translation="0" value="74.1301" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="24.0248" value="74.1301" />
+        <pose connection="IUSuspension" rotation="-4.59" translation="0" value="69.5365" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="19.0248" value="69.5365" />
+        <pose connection="IUSuspension" rotation="-4.59" translation="0" value="65.0029" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="14.0248" value="65.0029" />
+        <pose connection="IUSuspension" rotation="-4.49" translation="0" value="60.3836" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="9.0248" value="60.3836" />
+        <pose connection="IUSuspension" rotation="-4.29" translation="0" value="55.6705" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="4.0248" value="55.6705" />
+        <pose connection="IUSuspension" rotation="-4.09" translation="0" value="51.031" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="-0.975199999999999" value="51.031" />
+        <pose connection="IUSuspension" rotation="-3.89" translation="0" value="46.4866" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="-5.9752" value="46.4866" />
+        <pose connection="IUSuspension" rotation="-3.59" translation="0" value="41.8726" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="-10.9752" value="41.8726" />
+        <pose connection="IUSuspension" rotation="-3.09" translation="0" value="36.9913" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="-15.9752" value="36.9913" />
+        <pose connection="IUSuspension" rotation="-2.59" translation="0" value="32.2543" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="-20.9752" value="32.2543" />
+        <pose connection="IUSuspension" rotation="-2.19" translation="0" value="27.9602" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="-25.9752" value="27.9602" />
+        <pose connection="IUSuspension" rotation="-1.69" translation="0" value="23.7796" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="-30.9752" value="23.7796" />
+        <pose connection="IUSuspension" rotation="-1.19" translation="0" value="20.1258" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="-35.9752" value="20.1258" />
+        <pose connection="IUSuspension" rotation="-0.69" translation="0" value="17.3242" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="-40.9752" value="17.3242" />
+        <pose connection="IUSuspension" rotation="-0.59" translation="0" value="16.9628" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="-45.9752" value="16.9628" />
+      </poseDictionary>
+      <poseDictionary independent="IUProtrusion_1st marker_1st marker">
+        <pose connection="IUSuspension" rotation="-4.59" translation="0" value="79.4484" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="29.0248" value="79.4484" />
+        <pose connection="IUSuspension" rotation="-4.59" translation="0" value="74.6752" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="24.0248" value="74.6752" />
+        <pose connection="IUSuspension" rotation="-4.59" translation="0" value="69.9337" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="19.0248" value="69.9337" />
+        <pose connection="IUSuspension" rotation="-4.59" translation="0" value="65.2307" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="14.0248" value="65.2307" />
+        <pose connection="IUSuspension" rotation="-4.49" translation="0" value="60.4512" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="9.0248" value="60.4512" />
+        <pose connection="IUSuspension" rotation="-4.29" translation="0" value="55.5863" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="4.0248" value="55.5863" />
+        <pose connection="IUSuspension" rotation="-4.09" translation="0" value="50.7628" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="-0.975199999999999" value="50.7628" />
+        <pose connection="IUSuspension" rotation="-3.89" translation="0" value="45.9932" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="-5.9752" value="45.9932" />
+        <pose connection="IUSuspension" rotation="-3.59" translation="0" value="41.1437" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="-10.9752" value="41.1437" />
+        <pose connection="IUSuspension" rotation="-3.09" translation="0" value="36.0531" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="-15.9752" value="36.0531" />
+        <pose connection="IUSuspension" rotation="-2.59" translation="0" value="31.029" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="-20.9752" value="31.029" />
+        <pose connection="IUSuspension" rotation="-2.19" translation="0" value="26.2812" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="-25.9752" value="26.2812" />
+        <pose connection="IUSuspension" rotation="-1.69" translation="0" value="21.5289" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="-30.9752" value="21.5289" />
+        <pose connection="IUSuspension" rotation="-1.19" translation="0" value="17.0639" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="-35.9752" value="17.0639" />
+        <pose connection="IUSuspension" rotation="-0.69" translation="0" value="13.1673" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="-40.9752" value="13.1673" />
+        <pose connection="IUSuspension" rotation="-0.59" translation="0" value="11.6078" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="-45.9752" value="11.6078" />
+      </poseDictionary>
+    </if>
+    <if connection="IUSuspension.IU" part="189745-06">
+      <pose connection="IUSuspension" rotation="-4.34" translation="0" />
+      <poseDictionary independent="IUProtrusion">
+        <pose connection="IUSuspension.IU" rotation="0" translation="15" value="15" />
+        <pose connection="IUSuspension" rotation="-4.54" translation="0" value="15" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="10" value="10" />
+        <pose connection="IUSuspension" rotation="-4.44" translation="0" value="10" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="5" value="5" />
+        <pose connection="IUSuspension" rotation="-4.34" translation="0" value="5" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="0" value="0" />
+        <pose connection="IUSuspension" rotation="-4.34" translation="0" value="0" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="-5" value="-5" />
+        <pose connection="IUSuspension" rotation="-4.04" translation="0" value="-5" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="-10" value="-10" />
+        <pose connection="IUSuspension" rotation="-3.84" translation="0" value="-10" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="-15" value="-15" />
+        <pose connection="IUSuspension" rotation="-3.34" translation="0" value="-15" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="-20" value="-20" />
+        <pose connection="IUSuspension" rotation="-2.84" translation="0" value="-20" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="-25" value="-25" />
+        <pose connection="IUSuspension" rotation="-2.14" translation="0" value="-25" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="-30" value="-30" />
+        <pose connection="IUSuspension" rotation="-1.44" translation="0" value="-30" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="-35" value="-35" />
+        <pose connection="IUSuspension" rotation="-0.64" translation="0" value="-35" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="-40" value="-40" />
+        <pose connection="IUSuspension" rotation="0.36" translation="0" value="-40" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="-45" value="-45" />
+        <pose connection="IUSuspension" rotation="1.16" translation="0" value="-45" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="-50" value="-50" />
+        <pose connection="IUSuspension" rotation="2.16" translation="0" value="-50" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="-55" value="-55" />
+        <pose connection="IUSuspension" rotation="3.16" translation="0" value="-55" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="-60" value="-60" />
+        <pose connection="IUSuspension" rotation="4.06" translation="0" value="-60" />
+      </poseDictionary>
+      <poseDictionary independent="IUProtrusion_Tip_Tip">
+        <pose connection="IUSuspension.IU" rotation="0" translation="15" value="87.1418" />
+        <pose connection="IUSuspension" rotation="-4.54" translation="0" value="87.1418" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="10" value="82.6591" />
+        <pose connection="IUSuspension" rotation="-4.44" translation="0" value="82.6591" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="5" value="78.2442" />
+        <pose connection="IUSuspension" rotation="-4.34" translation="0" value="78.2442" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="0" value="74.0961" />
+        <pose connection="IUSuspension" rotation="-4.34" translation="0" value="74.0961" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="-5" value="69.4749" />
+        <pose connection="IUSuspension" rotation="-4.04" translation="0" value="69.4749" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="-10" value="65.1374" />
+        <pose connection="IUSuspension" rotation="-3.84" translation="0" value="65.1374" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="-15" value="60.2935" />
+        <pose connection="IUSuspension" rotation="-3.34" translation="0" value="60.2935" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="-20" value="55.5445" />
+        <pose connection="IUSuspension" rotation="-2.84" translation="0" value="55.5445" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="-25" value="50.4752" />
+        <pose connection="IUSuspension" rotation="-2.14" translation="0" value="50.4752" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="-30" value="45.5237" />
+        <pose connection="IUSuspension" rotation="-1.44" translation="0" value="45.5237" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="-35" value="40.491" />
+        <pose connection="IUSuspension" rotation="-0.64" translation="0" value="40.491" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="-40" value="35.1589" />
+        <pose connection="IUSuspension" rotation="0.36" translation="0" value="35.1589" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="-45" value="30.5384" />
+        <pose connection="IUSuspension" rotation="1.16" translation="0" value="30.5384" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="-50" value="25.7501" />
+        <pose connection="IUSuspension" rotation="2.16" translation="0" value="25.7501" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="-55" value="21.4526" />
+        <pose connection="IUSuspension" rotation="3.16" translation="0" value="21.4526" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="-60" value="18.2487" />
+        <pose connection="IUSuspension" rotation="4.06" translation="0" value="18.2487" />
+      </poseDictionary>
+      <poseDictionary independent="IUProtrusion_Tip_1st marker">
+        <pose connection="IUSuspension.IU" rotation="0" translation="15" value="86.9102" />
+        <pose connection="IUSuspension" rotation="-4.54" translation="0" value="86.9102" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="10" value="82.287" />
+        <pose connection="IUSuspension" rotation="-4.44" translation="0" value="82.287" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="5" value="77.7143" />
+        <pose connection="IUSuspension" rotation="-4.34" translation="0" value="77.7143" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="0" value="73.3596" />
+        <pose connection="IUSuspension" rotation="-4.34" translation="0" value="73.3596" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="-5" value="68.596" />
+        <pose connection="IUSuspension" rotation="-4.04" translation="0" value="68.596" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="-10" value="64.0616" />
+        <pose connection="IUSuspension" rotation="-3.84" translation="0" value="64.0616" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="-15" value="59.0836" />
+        <pose connection="IUSuspension" rotation="-3.34" translation="0" value="59.0836" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="-20" value="54.1695" />
+        <pose connection="IUSuspension" rotation="-2.84" translation="0" value="54.1695" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="-25" value="48.9634" />
+        <pose connection="IUSuspension" rotation="-2.14" translation="0" value="48.9634" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="-30" value="43.8313" />
+        <pose connection="IUSuspension" rotation="-1.44" translation="0" value="43.8313" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="-35" value="38.5973" />
+        <pose connection="IUSuspension" rotation="-0.64" translation="0" value="38.5973" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="-40" value="33.0679" />
+        <pose connection="IUSuspension" rotation="0.36" translation="0" value="33.0679" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="-45" value="28.0701" />
+        <pose connection="IUSuspension" rotation="1.16" translation="0" value="28.0701" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="-50" value="22.8392" />
+        <pose connection="IUSuspension" rotation="2.16" translation="0" value="22.8392" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="-55" value="17.8878" />
+        <pose connection="IUSuspension" rotation="3.16" translation="0" value="17.8878" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="-60" value="13.7393" />
+        <pose connection="IUSuspension" rotation="4.06" translation="0" value="13.7393" />
+      </poseDictionary>
+      <poseDictionary independent="IUProtrusion_1st marker_Tip">
+        <pose connection="IUSuspension.IU" rotation="0" translation="15" value="80.1419" />
+        <pose connection="IUSuspension" rotation="-4.54" translation="0" value="80.1419" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="10" value="75.6607" />
+        <pose connection="IUSuspension" rotation="-4.44" translation="0" value="75.6607" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="5" value="71.2541" />
+        <pose connection="IUSuspension" rotation="-4.34" translation="0" value="71.2541" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="0" value="67.1256" />
+        <pose connection="IUSuspension" rotation="-4.34" translation="0" value="67.1256" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="-5" value="62.5301" />
+        <pose connection="IUSuspension" rotation="-4.04" translation="0" value="62.5301" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="-10" value="58.2357" />
+        <pose connection="IUSuspension" rotation="-3.84" translation="0" value="58.2357" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="-15" value="53.441" />
+        <pose connection="IUSuspension" rotation="-3.34" translation="0" value="53.441" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="-20" value="48.7629" />
+        <pose connection="IUSuspension" rotation="-2.84" translation="0" value="48.7629" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="-25" value="43.7798" />
+        <pose connection="IUSuspension" rotation="-2.14" translation="0" value="43.7798" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="-30" value="38.9528" />
+        <pose connection="IUSuspension" rotation="-1.44" translation="0" value="38.9528" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="-35" value="34.0921" />
+        <pose connection="IUSuspension" rotation="-0.64" translation="0" value="34.0921" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="-40" value="28.9914" />
+        <pose connection="IUSuspension" rotation="0.36" translation="0" value="28.9914" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="-45" value="24.7774" />
+        <pose connection="IUSuspension" rotation="1.16" translation="0" value="24.7774" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="-50" value="20.6129" />
+        <pose connection="IUSuspension" rotation="2.16" translation="0" value="20.6129" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="-55" value="17.376" />
+        <pose connection="IUSuspension" rotation="3.16" translation="0" value="17.376" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="-60" value="15.8793" />
+        <pose connection="IUSuspension" rotation="4.06" translation="0" value="15.8793" />
+      </poseDictionary>
+      <poseDictionary independent="IUProtrusion_1st marker_1st marker">
+        <pose connection="IUSuspension.IU" rotation="0" translation="15" value="79.9319" />
+        <pose connection="IUSuspension" rotation="-4.54" translation="0" value="79.9319" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="10" value="75.2974" />
+        <pose connection="IUSuspension" rotation="-4.44" translation="0" value="75.2974" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="5" value="70.7169" />
+        <pose connection="IUSuspension" rotation="-4.34" translation="0" value="70.7169" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="0" value="66.3597" />
+        <pose connection="IUSuspension" rotation="-4.34" translation="0" value="66.3597" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="-5" value="61.6003" />
+        <pose connection="IUSuspension" rotation="-4.04" translation="0" value="61.6003" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="-10" value="57.0793" />
+        <pose connection="IUSuspension" rotation="-3.84" translation="0" value="57.0793" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="-15" value="52.1194" />
+        <pose connection="IUSuspension" rotation="-3.34" translation="0" value="52.1194" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="-20" value="47.235" />
+        <pose connection="IUSuspension" rotation="-2.84" translation="0" value="47.235" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="-25" value="42.0654" />
+        <pose connection="IUSuspension" rotation="-2.14" translation="0" value="42.0654" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="-30" value="36.9896" />
+        <pose connection="IUSuspension" rotation="-1.44" translation="0" value="36.9896" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="-35" value="31.835" />
+        <pose connection="IUSuspension" rotation="-0.64" translation="0" value="31.835" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="-40" value="26.4071" />
+        <pose connection="IUSuspension" rotation="0.36" translation="0" value="26.4071" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="-45" value="21.6236" />
+        <pose connection="IUSuspension" rotation="1.16" translation="0" value="21.6236" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="-50" value="16.7425" />
+        <pose connection="IUSuspension" rotation="2.16" translation="0" value="16.7425" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="-55" value="12.533" />
+        <pose connection="IUSuspension" rotation="3.16" translation="0" value="12.533" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="-60" value="10.0986" />
+        <pose connection="IUSuspension" rotation="4.06" translation="0" value="10.0986" />
+      </poseDictionary>
+    </if>
+    <if connection="IUSuspension.IU" part="110296-06">
+      <pose connection="IUSuspension" rotation="-2.34" translation="0" />
+      <poseDictionary independent="IUProtrusion">
+        <pose connection="IUSuspension.IU" rotation="0" translation="15" value="15" />
+        <pose connection="IUSuspension" rotation="-3.84" translation="0" value="15" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="10" value="10" />
+        <pose connection="IUSuspension" rotation="-3.44" translation="0" value="10" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="5" value="5" />
+        <pose connection="IUSuspension" rotation="-2.84" translation="0" value="5" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="0" value="0" />
+        <pose connection="IUSuspension" rotation="-2.34" translation="0" value="0" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="-5" value="-5" />
+        <pose connection="IUSuspension" rotation="-1.74" translation="0" value="-5" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="-10" value="-10" />
+        <pose connection="IUSuspension" rotation="-1.34" translation="0" value="-10" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="-15" value="-15" />
+        <pose connection="IUSuspension" rotation="-0.74" translation="0" value="-15" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="-20" value="-20" />
+        <pose connection="IUSuspension" rotation="-0.34" translation="0" value="-20" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="-25" value="-25" />
+        <pose connection="IUSuspension" rotation="-0.04" translation="0" value="-25" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="-30" value="-30" />
+        <pose connection="IUSuspension" rotation="0.46" translation="0" value="-30" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="-35" value="-35" />
+        <pose connection="IUSuspension" rotation="0.96" translation="0" value="-35" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="-40" value="-40" />
+        <pose connection="IUSuspension" rotation="1.36" translation="0" value="-40" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="-45" value="-45" />
+        <pose connection="IUSuspension" rotation="1.86" translation="0" value="-45" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="-50" value="-50" />
+        <pose connection="IUSuspension" rotation="2.36" translation="0" value="-50" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="-55" value="-55" />
+        <pose connection="IUSuspension" rotation="2.86" translation="0" value="-55" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="-60" value="-60" />
+        <pose connection="IUSuspension" rotation="3.36" translation="0" value="-60" />
+      </poseDictionary>
+      <poseDictionary independent="IUProtrusion_Tip_Tip">
+        <pose connection="IUSuspension.IU" rotation="0" translation="15" value="87.6785" />
+        <pose connection="IUSuspension" rotation="-3.84" translation="0" value="87.6785" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="10" value="82.5839" />
+        <pose connection="IUSuspension" rotation="-3.44" translation="0" value="82.5839" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="5" value="77.2188" />
+        <pose connection="IUSuspension" rotation="-2.84" translation="0" value="77.2188" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="0" value="72.023" />
+        <pose connection="IUSuspension" rotation="-2.34" translation="0" value="72.023" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="-5" value="66.7048" />
+        <pose connection="IUSuspension" rotation="-1.74" translation="0" value="66.7048" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="-10" value="61.7127" />
+        <pose connection="IUSuspension" rotation="-1.34" translation="0" value="61.7127" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="-15" value="56.4531" />
+        <pose connection="IUSuspension" rotation="-0.74" translation="0" value="56.4531" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="-20" value="51.5414" />
+        <pose connection="IUSuspension" rotation="-0.34" translation="0" value="51.5414" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="-25" value="46.8567" />
+        <pose connection="IUSuspension" rotation="-0.04" translation="0" value="46.8567" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="-30" value="41.9194" />
+        <pose connection="IUSuspension" rotation="0.46" translation="0" value="41.9194" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="-35" value="37.071" />
+        <pose connection="IUSuspension" rotation="0.96" translation="0" value="37.071" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="-40" value="32.5414" />
+        <pose connection="IUSuspension" rotation="1.36" translation="0" value="32.5414" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="-45" value="28.0109" />
+        <pose connection="IUSuspension" rotation="1.86" translation="0" value="28.0109" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="-50" value="23.7601" />
+        <pose connection="IUSuspension" rotation="2.36" translation="0" value="23.7601" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="-55" value="19.9591" />
+        <pose connection="IUSuspension" rotation="2.86" translation="0" value="19.9591" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="-60" value="16.9029" />
+        <pose connection="IUSuspension" rotation="3.36" translation="0" value="16.9029" />
+      </poseDictionary>
+      <poseDictionary independent="IUProtrusion_Tip_1st marker">
+        <pose connection="IUSuspension.IU" rotation="0" translation="15" value="87.9886" />
+        <pose connection="IUSuspension" rotation="-3.84" translation="0" value="87.9886" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="10" value="82.8672" />
+        <pose connection="IUSuspension" rotation="-3.44" translation="0" value="82.8672" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="5" value="77.5268" />
+        <pose connection="IUSuspension" rotation="-2.84" translation="0" value="77.5268" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="0" value="72.319" />
+        <pose connection="IUSuspension" rotation="-2.34" translation="0" value="72.319" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="-5" value="67.0126" />
+        <pose connection="IUSuspension" rotation="-1.74" translation="0" value="67.0126" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="-10" value="61.954" />
+        <pose connection="IUSuspension" rotation="-1.34" translation="0" value="61.954" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="-15" value="56.6834" />
+        <pose connection="IUSuspension" rotation="-0.74" translation="0" value="56.6834" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="-20" value="51.6671" />
+        <pose connection="IUSuspension" rotation="-0.34" translation="0" value="51.6671" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="-25" value="46.8051" />
+        <pose connection="IUSuspension" rotation="-0.04" translation="0" value="46.8051" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="-30" value="41.7339" />
+        <pose connection="IUSuspension" rotation="0.46" translation="0" value="41.7339" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="-35" value="36.7026" />
+        <pose connection="IUSuspension" rotation="0.96" translation="0" value="36.7026" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="-40" value="31.8667" />
+        <pose connection="IUSuspension" rotation="1.36" translation="0" value="31.8667" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="-45" value="26.9751" />
+        <pose connection="IUSuspension" rotation="1.86" translation="0" value="26.9751" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="-50" value="22.2066" />
+        <pose connection="IUSuspension" rotation="2.36" translation="0" value="22.2066" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="-55" value="17.6507" />
+        <pose connection="IUSuspension" rotation="2.86" translation="0" value="17.6507" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="-60" value="13.5105" />
+        <pose connection="IUSuspension" rotation="3.36" translation="0" value="13.5105" />
+      </poseDictionary>
+      <poseDictionary independent="IUProtrusion_1st marker_Tip">
+        <pose connection="IUSuspension.IU" rotation="0" translation="15" value="75.9204" />
+        <pose connection="IUSuspension" rotation="-3.84" translation="0" value="75.9204" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="10" value="70.8626" />
+        <pose connection="IUSuspension" rotation="-3.44" translation="0" value="70.8626" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="5" value="65.5247" />
+        <pose connection="IUSuspension" rotation="-2.84" translation="0" value="65.5247" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="0" value="60.3721" />
+        <pose connection="IUSuspension" rotation="-2.34" translation="0" value="60.3721" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="-5" value="55.0963" />
+        <pose connection="IUSuspension" rotation="-1.74" translation="0" value="55.0963" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="-10" value="50.1854" />
+        <pose connection="IUSuspension" rotation="-1.34" translation="0" value="50.1854" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="-15" value="44.9995" />
+        <pose connection="IUSuspension" rotation="-0.74" translation="0" value="44.9995" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="-20" value="40.2256" />
+        <pose connection="IUSuspension" rotation="-0.34" translation="0" value="40.2256" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="-25" value="35.7577" />
+        <pose connection="IUSuspension" rotation="-0.04" translation="0" value="35.7577" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="-30" value="31.0714" />
+        <pose connection="IUSuspension" rotation="0.46" translation="0" value="31.0714" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="-35" value="26.595" />
+        <pose connection="IUSuspension" rotation="0.96" translation="0" value="26.595" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="-40" value="22.6885" />
+        <pose connection="IUSuspension" rotation="1.36" translation="0" value="22.6885" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="-45" value="19.0983" />
+        <pose connection="IUSuspension" rotation="1.86" translation="0" value="19.0983" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="-50" value="16.392" />
+        <pose connection="IUSuspension" rotation="2.36" translation="0" value="16.392" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="-55" value="15.3956" />
+        <pose connection="IUSuspension" rotation="2.86" translation="0" value="15.3956" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="-60" value="15.0416" />
+        <pose connection="IUSuspension" rotation="3.36" translation="0" value="15.0416" />
+      </poseDictionary>
+      <poseDictionary independent="IUProtrusion_1st marker_1st marker">
+        <pose connection="IUSuspension.IU" rotation="0" translation="15" value="76.0962" />
+        <pose connection="IUSuspension" rotation="-3.84" translation="0" value="76.0962" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="10" value="70.9904" />
+        <pose connection="IUSuspension" rotation="-3.44" translation="0" value="70.9904" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="5" value="65.6576" />
+        <pose connection="IUSuspension" rotation="-2.84" translation="0" value="65.6576" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="0" value="60.4654" />
+        <pose connection="IUSuspension" rotation="-2.34" translation="0" value="60.4654" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="-5" value="55.171" />
+        <pose connection="IUSuspension" rotation="-1.74" translation="0" value="55.171" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="-10" value="50.145" />
+        <pose connection="IUSuspension" rotation="-1.34" translation="0" value="50.145" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="-15" value="44.8961" />
+        <pose connection="IUSuspension" rotation="-0.74" translation="0" value="44.8961" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="-20" value="39.9344" />
+        <pose connection="IUSuspension" rotation="-0.34" translation="0" value="39.9344" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="-25" value="35.1672" />
+        <pose connection="IUSuspension" rotation="-0.04" translation="0" value="35.1672" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="-30" value="30.1936" />
+        <pose connection="IUSuspension" rotation="0.46" translation="0" value="30.1936" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="-35" value="25.311" />
+        <pose connection="IUSuspension" rotation="0.96" translation="0" value="25.311" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="-40" value="20.7578" />
+        <pose connection="IUSuspension" rotation="1.36" translation="0" value="20.7578" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="-45" value="16.3146" />
+        <pose connection="IUSuspension" rotation="1.86" translation="0" value="16.3146" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="-50" value="12.4283" />
+        <pose connection="IUSuspension" rotation="2.36" translation="0" value="12.4283" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="-55" value="9.7677" />
+        <pose connection="IUSuspension" rotation="2.86" translation="0" value="9.7677" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="-60" value="9.4145" />
+        <pose connection="IUSuspension" rotation="3.36" translation="0" value="9.4145" />
+      </poseDictionary>
+    </if>
+    <if connection="IUSuspension.IU" part="110298-06">
+      <pose connection="IUSuspension" rotation="-0.92" translation="0" />
+      <poseDictionary independent="IUProtrusion">
+        <pose connection="IUSuspension" rotation="-3.72" translation="0" value="15" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="15" value="15" />
+        <pose connection="IUSuspension" rotation="-3.02" translation="0" value="10" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="10" value="10" />
+        <pose connection="IUSuspension" rotation="-2.02" translation="0" value="5" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="5" value="5" />
+        <pose connection="IUSuspension" rotation="-0.92" translation="0" value="0" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="0" value="0" />
+        <pose connection="IUSuspension" rotation="-0.02" translation="0" value="-5" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="-5" value="-5" />
+        <pose connection="IUSuspension" rotation="1.18" translation="0" value="-10" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="-10" value="-10" />
+        <pose connection="IUSuspension" rotation="2.18" translation="0" value="-15" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="-15" value="-15" />
+        <pose connection="IUSuspension" rotation="3.18" translation="0" value="-20" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="-20" value="-20" />
+        <pose connection="IUSuspension" rotation="4.08" translation="0" value="-25" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="-25" value="-25" />
+        <pose connection="IUSuspension" rotation="5.08" translation="0" value="-30" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="-30" value="-30" />
+        <pose connection="IUSuspension" rotation="6.08" translation="0" value="-35" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="-35" value="-35" />
+        <pose connection="IUSuspension" rotation="6.98" translation="0" value="-40" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="-40" value="-40" />
+        <pose connection="IUSuspension" rotation="7.88" translation="0" value="-45" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="-45" value="-45" />
+        <pose connection="IUSuspension" rotation="8.78" translation="0" value="-50" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="-50" value="-50" />
+        <pose connection="IUSuspension" rotation="9.78" translation="0" value="-55" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="-55" value="-55" />
+        <pose connection="IUSuspension" rotation="10.78" translation="0" value="-60" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="-60" value="-60" />
+      </poseDictionary>
+      <poseDictionary independent="IUProtrusion_Tip_Tip">
+        <pose connection="IUSuspension" rotation="-3.72" translation="0" value="90.8663" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="15" value="90.8663" />
+        <pose connection="IUSuspension" rotation="-3.02" translation="0" value="85.6047" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="10" value="85.6047" />
+        <pose connection="IUSuspension" rotation="-2.02" translation="0" value="79.7907" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="5" value="79.7907" />
+        <pose connection="IUSuspension" rotation="-0.92" translation="0" value="73.831" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="0" value="73.831" />
+        <pose connection="IUSuspension" rotation="-0.02" translation="0" value="68.329" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="-5" value="68.329" />
+        <pose connection="IUSuspension" rotation="1.18" translation="0" value="62.2883" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="-10" value="62.2883" />
+        <pose connection="IUSuspension" rotation="2.18" translation="0" value="56.7132" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="-15" value="56.7132" />
+        <pose connection="IUSuspension" rotation="3.18" translation="0" value="51.2121" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="-20" value="51.2121" />
+        <pose connection="IUSuspension" rotation="4.08" translation="0" value="46.0024" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="-25" value="46.0024" />
+        <pose connection="IUSuspension" rotation="5.08" translation="0" value="40.6918" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="-30" value="40.6918" />
+        <pose connection="IUSuspension" rotation="6.08" translation="0" value="35.5091" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="-35" value="35.5091" />
+        <pose connection="IUSuspension" rotation="6.98" translation="0" value="30.7254" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="-40" value="30.7254" />
+        <pose connection="IUSuspension" rotation="7.88" translation="0" value="26.2089" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="-45" value="26.2089" />
+        <pose connection="IUSuspension" rotation="8.78" translation="0" value="22.0972" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="-50" value="22.0972" />
+        <pose connection="IUSuspension" rotation="9.78" translation="0" value="18.3481" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="-55" value="18.3481" />
+        <pose connection="IUSuspension" rotation="10.78" translation="0" value="15.6033" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="-60" value="15.6033" />
+      </poseDictionary>
+      <poseDictionary independent="IUProtrusion_Tip_1st marker">
+        <pose connection="IUSuspension" rotation="-3.72" translation="0" value="89.7369" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="15" value="89.7369" />
+        <pose connection="IUSuspension" rotation="-3.02" translation="0" value="84.4436" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="10" value="84.4436" />
+        <pose connection="IUSuspension" rotation="-2.02" translation="0" value="78.6641" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="5" value="78.6641" />
+        <pose connection="IUSuspension" rotation="-0.92" translation="0" value="72.7585" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="0" value="72.7585" />
+        <pose connection="IUSuspension" rotation="-0.02" translation="0" value="67.245" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="-5" value="67.245" />
+        <pose connection="IUSuspension" rotation="1.18" translation="0" value="61.27" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="-10" value="61.27" />
+        <pose connection="IUSuspension" rotation="2.18" translation="0" value="55.6862" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="-15" value="55.6862" />
+        <pose connection="IUSuspension" rotation="3.18" translation="0" value="50.1555" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="-20" value="50.1555" />
+        <pose connection="IUSuspension" rotation="4.08" translation="0" value="44.8501" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="-25" value="44.8501" />
+        <pose connection="IUSuspension" rotation="5.08" translation="0" value="39.4406" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="-30" value="39.4406" />
+        <pose connection="IUSuspension" rotation="6.08" translation="0" value="34.1039" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="-35" value="34.1039" />
+        <pose connection="IUSuspension" rotation="6.98" translation="0" value="29.0368" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="-40" value="29.0368" />
+        <pose connection="IUSuspension" rotation="7.88" translation="0" value="24.1077" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="-45" value="24.1077" />
+        <pose connection="IUSuspension" rotation="8.78" translation="0" value="19.3917" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="-50" value="19.3917" />
+        <pose connection="IUSuspension" rotation="9.78" translation="0" value="14.8137" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="-55" value="14.8137" />
+        <pose connection="IUSuspension" rotation="10.78" translation="0" value="10.928" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="-60" value="10.928" />
+      </poseDictionary>
+      <poseDictionary independent="IUProtrusion_1st marker_Tip">
+        <pose connection="IUSuspension" rotation="-3.72" translation="0" value="79.0864" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="15" value="79.0864" />
+        <pose connection="IUSuspension" rotation="-3.02" translation="0" value="73.8712" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="10" value="73.8712" />
+        <pose connection="IUSuspension" rotation="-2.02" translation="0" value="68.096" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="5" value="68.096" />
+        <pose connection="IUSuspension" rotation="-0.92" translation="0" value="62.1762" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="0" value="62.1762" />
+        <pose connection="IUSuspension" rotation="-0.02" translation="0" value="56.7427" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="-5" value="56.7427" />
+        <pose connection="IUSuspension" rotation="1.18" translation="0" value="50.7569" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="-10" value="50.7569" />
+        <pose connection="IUSuspension" rotation="2.18" translation="0" value="45.2792" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="-15" value="45.2792" />
+        <pose connection="IUSuspension" rotation="3.18" translation="0" value="39.9103" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="-20" value="39.9103" />
+        <pose connection="IUSuspension" rotation="4.08" translation="0" value="34.9072" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="-25" value="34.9072" />
+        <pose connection="IUSuspension" rotation="5.08" translation="0" value="29.8734" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="-30" value="29.8734" />
+        <pose connection="IUSuspension" rotation="6.08" translation="0" value="25.1139" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="-35" value="25.1139" />
+        <pose connection="IUSuspension" rotation="6.98" translation="0" value="21.0516" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="-40" value="21.0516" />
+        <pose connection="IUSuspension" rotation="7.88" translation="0" value="17.7327" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="-45" value="17.7327" />
+        <pose connection="IUSuspension" rotation="8.78" translation="0" value="15.9895" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="-50" value="15.9895" />
+        <pose connection="IUSuspension" rotation="9.78" translation="0" value="15.5995" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="-55" value="15.5995" />
+        <pose connection="IUSuspension" rotation="10.78" translation="0" value="14.8608" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="-60" value="14.8608" />
+      </poseDictionary>
+      <poseDictionary independent="IUProtrusion_1st marker_1st marker">
+        <pose connection="IUSuspension" rotation="-3.72" translation="0" value="77.8462" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="15" value="77.8462" />
+        <pose connection="IUSuspension" rotation="-3.02" translation="0" value="72.5748" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="10" value="72.5748" />
+        <pose connection="IUSuspension" rotation="-2.02" translation="0" value="66.8104" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="5" value="66.8104" />
+        <pose connection="IUSuspension" rotation="-0.92" translation="0" value="60.918" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="0" value="60.918" />
+        <pose connection="IUSuspension" rotation="-0.02" translation="0" value="55.4333" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="-5" value="55.4333" />
+        <pose connection="IUSuspension" rotation="1.18" translation="0" value="49.4725" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="-10" value="49.4725" />
+        <pose connection="IUSuspension" rotation="2.18" translation="0" value="43.9244" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="-15" value="43.9244" />
+        <pose connection="IUSuspension" rotation="3.18" translation="0" value="38.4424" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="-20" value="38.4424" />
+        <pose connection="IUSuspension" rotation="4.08" translation="0" value="33.2215" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="-25" value="33.2215" />
+        <pose connection="IUSuspension" rotation="5.08" translation="0" value="27.9196" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="-30" value="27.9196" />
+        <pose connection="IUSuspension" rotation="6.08" translation="0" value="22.754" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="-35" value="22.754" />
+        <pose connection="IUSuspension" rotation="6.98" translation="0" value="18.0244" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="-40" value="18.0244" />
+        <pose connection="IUSuspension" rotation="7.88" translation="0" value="13.7516" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="-45" value="13.7516" />
+        <pose connection="IUSuspension" rotation="8.78" translation="0" value="10.4525" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="-50" value="10.4525" />
+        <pose connection="IUSuspension" rotation="9.78" translation="0" value="10.2396" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="-55" value="10.2396" />
+        <pose connection="IUSuspension" rotation="10.78" translation="0" value="8.9065" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="-60" value="8.9065" />
+      </poseDictionary>
+    </if>
+    <if connection="IUSuspension.IU" part="110300-06">
+      <pose connection="IUSuspension" rotation="-0.11" translation="0" />
+      <poseDictionary independent="IUProtrusion">
+        <pose connection="IUSuspension" rotation="-3.71" translation="0" value="15" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="15" value="15" />
+        <pose connection="IUSuspension" rotation="-2.41" translation="0" value="10" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="10" value="10" />
+        <pose connection="IUSuspension" rotation="-1.51" translation="0" value="5" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="5" value="5" />
+        <pose connection="IUSuspension" rotation="-0.11" translation="0" value="0" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="0" value="0" />
+        <pose connection="IUSuspension" rotation="1.09" translation="0" value="-5" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="-5" value="-5" />
+        <pose connection="IUSuspension" rotation="3.59" translation="0" value="-10" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="-10" value="-10" />
+        <pose connection="IUSuspension" rotation="5.29" translation="0" value="-15" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="-15" value="-15" />
+        <pose connection="IUSuspension" rotation="6.69" translation="0" value="-20" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="-20" value="-20" />
+        <pose connection="IUSuspension" rotation="8.39" translation="0" value="-25" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="-25" value="-25" />
+        <pose connection="IUSuspension" rotation="9.99" translation="0" value="-30" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="-30" value="-30" />
+        <pose connection="IUSuspension" rotation="11.59" translation="0" value="-35" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="-35" value="-35" />
+        <pose connection="IUSuspension" rotation="13.19" translation="0" value="-40" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="-40" value="-40" />
+        <pose connection="IUSuspension" rotation="14.59" translation="0" value="-45" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="-45" value="-45" />
+        <pose connection="IUSuspension" rotation="15.99" translation="0" value="-50" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="-50" value="-50" />
+        <pose connection="IUSuspension" rotation="17.39" translation="0" value="-55" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="-55" value="-55" />
+        <pose connection="IUSuspension" rotation="18.79" translation="0" value="-60" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="-60" value="-60" />
+      </poseDictionary>
+      <poseDictionary independent="IUProtrusion_Tip_Tip">
+        <pose connection="IUSuspension" rotation="-3.71" translation="0" value="92.9601" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="15" value="92.9601" />
+        <pose connection="IUSuspension" rotation="-2.41" translation="0" value="86.789" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="10" value="86.789" />
+        <pose connection="IUSuspension" rotation="-1.51" translation="0" value="81.6839" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="5" value="81.6839" />
+        <pose connection="IUSuspension" rotation="-0.11" translation="0" value="75.4598" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="0" value="75.4598" />
+        <pose connection="IUSuspension" rotation="1.09" translation="0" value="69.8356" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="-5" value="69.8356" />
+        <pose connection="IUSuspension" rotation="3.59" translation="0" value="61.1477" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="-10" value="61.1477" />
+        <pose connection="IUSuspension" rotation="5.29" translation="0" value="54.5362" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="-15" value="54.5362" />
+        <pose connection="IUSuspension" rotation="6.69" translation="0" value="48.7817" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="-20" value="48.7817" />
+        <pose connection="IUSuspension" rotation="8.39" translation="0" value="42.448" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="-25" value="42.448" />
+        <pose connection="IUSuspension" rotation="9.99" translation="0" value="36.5307" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="-30" value="36.5307" />
+        <pose connection="IUSuspension" rotation="11.59" translation="0" value="30.8282" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="-35" value="30.8282" />
+        <pose connection="IUSuspension" rotation="13.19" translation="0" value="25.4144" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="-40" value="25.4144" />
+        <pose connection="IUSuspension" rotation="14.59" translation="0" value="20.9854" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="-45" value="20.9854" />
+        <pose connection="IUSuspension" rotation="15.99" translation="0" value="17.317" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="-50" value="17.317" />
+        <pose connection="IUSuspension" rotation="17.39" translation="0" value="14.8859" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="-55" value="14.8859" />
+        <pose connection="IUSuspension" rotation="18.79" translation="0" value="14.2384" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="-60" value="14.2384" />
+      </poseDictionary>
+      <poseDictionary independent="IUProtrusion_Tip_1st marker">
+        <pose connection="IUSuspension" rotation="-3.71" translation="0" value="90.4944" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="15" value="90.4944" />
+        <pose connection="IUSuspension" rotation="-2.41" translation="0" value="84.3412" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="10" value="84.3412" />
+        <pose connection="IUSuspension" rotation="-1.51" translation="0" value="79.1591" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="5" value="79.1591" />
+        <pose connection="IUSuspension" rotation="-0.11" translation="0" value="72.9451" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="0" value="72.9451" />
+        <pose connection="IUSuspension" rotation="1.09" translation="0" value="67.2702" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="-5" value="67.2702" />
+        <pose connection="IUSuspension" rotation="3.59" translation="0" value="58.8234" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="-10" value="58.8234" />
+        <pose connection="IUSuspension" rotation="5.29" translation="0" value="52.2546" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="-15" value="52.2546" />
+        <pose connection="IUSuspension" rotation="6.69" translation="0" value="46.4327" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="-20" value="46.4327" />
+        <pose connection="IUSuspension" rotation="8.39" translation="0" value="40.0831" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="-25" value="40.0831" />
+        <pose connection="IUSuspension" rotation="9.99" translation="0" value="34.0686" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="-30" value="34.0686" />
+        <pose connection="IUSuspension" rotation="11.59" translation="0" value="28.1906" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="-35" value="28.1906" />
+        <pose connection="IUSuspension" rotation="13.19" translation="0" value="22.477" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="-40" value="22.477" />
+        <pose connection="IUSuspension" rotation="14.59" translation="0" value="17.4647" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="-45" value="17.4647" />
+        <pose connection="IUSuspension" rotation="15.99" translation="0" value="12.9313" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="-50" value="12.9313" />
+        <pose connection="IUSuspension" rotation="17.39" translation="0" value="9.4387" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="-55" value="9.4387" />
+        <pose connection="IUSuspension" rotation="18.79" translation="0" value="8.2399" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="-60" value="8.2399" />
+      </poseDictionary>
+      <poseDictionary independent="IUProtrusion_1st marker_Tip">
+        <pose connection="IUSuspension" rotation="-3.71" translation="0" value="81.1465" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="15" value="81.1465" />
+        <pose connection="IUSuspension" rotation="-2.41" translation="0" value="75.0172" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="10" value="75.0172" />
+        <pose connection="IUSuspension" rotation="-1.51" translation="0" value="69.9854" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="5" value="69.9854" />
+        <pose connection="IUSuspension" rotation="-0.11" translation="0" value="63.8329" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="0" value="63.8329" />
+        <pose connection="IUSuspension" rotation="1.09" translation="0" value="58.317" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="-5" value="58.317" />
+        <pose connection="IUSuspension" rotation="3.59" translation="0" value="49.6624" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="-10" value="49.6624" />
+        <pose connection="IUSuspension" rotation="5.29" translation="0" value="43.1702" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="-15" value="43.1702" />
+        <pose connection="IUSuspension" rotation="6.69" translation="0" value="37.6243" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="-20" value="37.6243" />
+        <pose connection="IUSuspension" rotation="8.39" translation="0" value="31.5449" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="-25" value="31.5449" />
+        <pose connection="IUSuspension" rotation="9.99" translation="0" value="26.0433" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="-30" value="26.0433" />
+        <pose connection="IUSuspension" rotation="11.59" translation="0" value="21.0279" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="-35" value="21.0279" />
+        <pose connection="IUSuspension" rotation="13.19" translation="0" value="19.2536" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="-40" value="19.2536" />
+        <pose connection="IUSuspension" rotation="14.59" translation="0" value="16.8276" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="-45" value="16.8276" />
+        <pose connection="IUSuspension" rotation="15.99" translation="0" value="16.1233" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="-50" value="16.1233" />
+        <pose connection="IUSuspension" rotation="17.39" translation="0" value="14.6076" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="-55" value="14.6076" />
+        <pose connection="IUSuspension" rotation="18.79" translation="0" value="14.373" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="-60" value="14.373" />
+      </poseDictionary>
+      <poseDictionary independent="IUProtrusion_1st marker_1st marker">
+        <pose connection="IUSuspension" rotation="-3.71" translation="0" value="78.6024" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="15" value="78.6024" />
+        <pose connection="IUSuspension" rotation="-2.41" translation="0" value="72.4675" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="10" value="72.4675" />
+        <pose connection="IUSuspension" rotation="-1.51" translation="0" value="67.3242" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="5" value="67.3242" />
+        <pose connection="IUSuspension" rotation="-0.11" translation="0" value="61.1455" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="0" value="61.1455" />
+        <pose connection="IUSuspension" rotation="1.09" translation="0" value="55.5299" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="-5" value="55.5299" />
+        <pose connection="IUSuspension" rotation="3.59" translation="0" value="47.0726" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="-10" value="47.0726" />
+        <pose connection="IUSuspension" rotation="5.29" translation="0" value="40.5485" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="-15" value="40.5485" />
+        <pose connection="IUSuspension" rotation="6.69" translation="0" value="34.823" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="-20" value="34.823" />
+        <pose connection="IUSuspension" rotation="8.39" translation="0" value="28.5729" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="-25" value="28.5729" />
+        <pose connection="IUSuspension" rotation="9.99" translation="0" value="22.7369" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="-30" value="22.7369" />
+        <pose connection="IUSuspension" rotation="11.59" translation="0" value="17.1769" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="-35" value="17.1769" />
+        <pose connection="IUSuspension" rotation="13.19" translation="0" value="15.0483" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="-40" value="15.0483" />
+        <pose connection="IUSuspension" rotation="14.59" translation="0" value="12.1264" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="-45" value="12.1264" />
+        <pose connection="IUSuspension" rotation="15.99" translation="0" value="11.0243" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="-50" value="11.0243" />
+        <pose connection="IUSuspension" rotation="17.39" translation="0" value="8.8924" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="-55" value="8.8924" />
+        <pose connection="IUSuspension" rotation="18.79" translation="0" value="8.4553" />
+        <pose connection="IUSuspension.IU" rotation="0" translation="-60" value="8.4553" />
+      </poseDictionary>
+    </if>
+  </assemblyPose>
+  <catheterOrder>
+    <catheter label="O1" />
+    <catheter label="O2" />
+    <catheter label="IU" />
+    <catheter label="N1R" />
+    <catheter label="N2R" />
+    <catheter label="N3R" />
+    <catheter label="N1L" />
+    <catheter label="N2L" />
+    <catheter label="N3L" />    
+  </catheterOrder>
+</configuration>
