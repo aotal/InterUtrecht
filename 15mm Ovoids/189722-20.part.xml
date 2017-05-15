@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--Copyright Nucletron © 2010
+-->
+<part xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" revision="1">
+  <information partid="189722-20" type="Fixation">
+    <description>
+      <longDescription>Fixation</longDescription>
+      <shortDescription />
+    </description>
+  </information>
+  <anchorPoints />
+  <connectors>
+    <connector name="OVOID1FIX">
+      <centerPoint x="2.378726355773" y="-4.5" z="110.6359183675" />
+      <axisDirection x="0" y="1" z="0" />
+      <referenceDirection x="0.1736481776669" y="0" z="0.9848077530122" />
+    </connector>
+    <connector name="NEEDLE1">
+      <centerPoint x="2.32" y="-5.05" z="111.1" />
+      <axisDirection x="0" y="1" z="0" />
+      <referenceDirection x="0.1736481776669" y="0" z="0.9848077530122" />
+    </connector>
+    <connector name="NEEDLE2">
+      <centerPoint x="1.70" y="1.22" z="107.54" />
+      <axisDirection x="0" y="1" z="0" />
+      <referenceDirection x="0.1736481776669" y="0" z="0.9848077530122" />
+    </connector>
+    <connector name="NEEDLE3">
+      <centerPoint x="1.21" y="7.72" z="104.75" />
+      <axisDirection x="0" y="1" z="0" />
+      <referenceDirection x="0.1736481776669" y="0" z="0.9848077530122" />
+    </connector>
+  </connectors>
+  <skin>
+    <triangles>
+    </triangles>
+  </skin>
+</part>
